@@ -102,6 +102,7 @@ async function getAnswer(question, callback) {
             method: "POST",
             url: "https://chat.openai.com/backend-api/conversation",
             headers: {
+                "Accept": "application/json, text/plain, */*",
                 "Content-Type": "   application/json",
                 Authorization: `Bearer ${accessToken}`
             },
