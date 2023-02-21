@@ -24,8 +24,8 @@
 // @grant            GM.setValue
 // @grant            GM.info
 // @grant            GM.xmlHttpRequest
-// @updateURL        https://www.duckduckgpt.com/userscript/code/duckduckgpt.meta.js
-// @downloadURL      https://www.duckduckgpt.com/userscript/code/duckduckgpt.user.js
+// @updateURL        https://raw.githubusercontent.com/Delamcode/DuckDuckGPT-Safari-iOS/master/chatgpt/duckduckgpt/duckduckgpt.user.js
+// @downloadURL      https://raw.githubusercontent.com/Delamcode/DuckDuckGPT-Safari-iOS/master/chatgpt/duckduckgpt/duckduckgpt.user.js
 // ==/UserScript==
 
 var GM_setValue = (() => window.GM_setValue ?? GM.setValue)()
