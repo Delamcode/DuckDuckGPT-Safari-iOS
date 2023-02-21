@@ -128,7 +128,7 @@ async function getAnswer(question, callback) {
     } catch (error) {
         if (error === "UNAUTHORIZED") {
             GM_deleteValue("accessToken")
-            alert('Unauthorized')
+            console.log('Unauthorized')
             alertLogin()
         }
         console.error("getAnswer error: ", error)
@@ -139,7 +139,7 @@ async function getAnswer(question, callback) {
     }
     function onLoad() {
         return function(event) {
-            if (event.status === 401) { GM_deleteValue("accessToken") ; alertLogin() ; alert('401')}
+            if (event.status === 401) { GM_deleteValue("accessToken") ; alertLogin() ; console.log('401')}
             if (event.status === 403) { alertBlockedByCloudflare() }
             if (event.status === 429) { alertFrequentRequests() }
             if (getUserscriptManager() !== "Tampermonkey") {
@@ -179,7 +179,7 @@ function getAccessToken() {
                 url: "https://chat.openai.com/api/auth/session",
                 onload: function(response) {
                     if (isBlockedbyCloudflare(response.responseText)) {
-                        alert('Clouds!')
+                        console.log('Cloudflare')
                         alertLogin() ; return }
                     var accessToken2 = JSON.parse(response.responseText).accessToken;
                     if (!accessToken2) { rejcet("UNAUTHORIZED") }
