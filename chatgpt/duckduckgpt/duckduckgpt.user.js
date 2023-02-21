@@ -98,6 +98,7 @@ function isBlockedbyCloudflare(resp) {
 async function getAnswer(question, callback) {
     try {
         var accessToken = await getAccessToken()
+        alert(accessToken)
         GM_xmlhttpRequest({
             method: "POST",
             url: "https://chat.openai.com/backend-api/conversation",
