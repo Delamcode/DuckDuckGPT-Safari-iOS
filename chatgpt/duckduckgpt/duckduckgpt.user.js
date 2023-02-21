@@ -190,6 +190,7 @@ function getAccessToken() {
                 ontimeout: () => { console.error("getAccessToken timeout!") }
             })
         } else { resolve(accessToken) }
+        console.log(accessToken)
 })}
 
 // Stylize ChatGPT container to match DDG's
