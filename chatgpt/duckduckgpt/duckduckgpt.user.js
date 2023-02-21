@@ -14,6 +14,11 @@
 // @compatible       edge
 // @match            https://duckduckgo.com/*
 // @connect          chat.openai.com
+// @grant            GM_deleteValue
+// @grant            GM_getValue
+// @grant            GM_setValue
+// @grant            GM_info
+// @grant            GM_xmlhttpRequest
 // @grant            GM.deleteValue
 // @grant            GM.getValue
 // @grant            GM.setValue
@@ -23,11 +28,11 @@
 // @downloadURL      https://www.duckduckgpt.com/userscript/code/duckduckgpt.user.js
 // ==/UserScript==
 
-var GM_setValue = (() => GM.setValue)()
-var GM_deleteValue = (() => GM.deleteValue)()
-var GM_info = (() => GM.info)()
-var GM_xmlhttpRequest = (() => GM.xmlHttpRequest)()
-var GM_getValue = (() => GM.getValue)()
+var GM_setValue = (() => window.GM_setValue ?? GM.setValue)()
+var GM_deleteValue = (() => window.GM_deleteValue ?? GM.deleteValue)()
+var GM_info = (() => window.GM_info ?? GM.info)()
+var GM_xmlhttpRequest = (() => window.GM_xmlhttpRequest ?? GM.xmlHttpRequest)()
+var GM_getValue = (() => window.GM_getValue ?? GM.getValue)()
 
 function getUserscriptManager() {
     try {
